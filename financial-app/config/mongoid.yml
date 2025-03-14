@@ -1,0 +1,26 @@
+development:
+  clients:
+    default:
+      uri: mongodb://localhost:27017/financial_app_development
+      options:
+        server_selection_timeout: 5
+  options:
+    raise_not_found_error: false
+
+test:
+  clients:
+    default:
+      uri: mongodb://localhost:27017/financial_app_test
+      options:
+        server_selection_timeout: 5
+  options:
+    raise_not_found_error: false
+
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>
+      options:
+        server_selection_timeout: 5
+  options:
+    raise_not_found_error: false
